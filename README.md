@@ -31,6 +31,12 @@ func ExecuteSomeStuffInMongoDB() {
     if err := col.Insert(&doc); err != nil {
         //Handle error if you want
     }
+
+    id := "34yhgvfrtyui213" // id is the hex of the objectId
+    findDoc := Document{}
+	if err := db.Find(bson.M{"_id": bson.ObjectIdHex(id)}).One(&findDoc); err != nil {
+        //Handle error if you want
+    }
 }
 
 ```
