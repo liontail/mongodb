@@ -1,8 +1,8 @@
-###Simple Singleton MongoDB Session
+### Simple Singleton MongoDB Session
 
-##Usages
+#### Usages
 
-#Before anything else you should initail the connection ( session )
+##### Before anything else you should initail the connection ( session )
 ```go
 
 func main() {
