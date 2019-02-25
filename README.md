@@ -5,6 +5,8 @@
 ##### Before anything else you should initail the connection ( session )
 ```go
 
+import "github.com/liontail/mongodb"
+
 func main() {
     ...
     err := mongodb.InitMongoDB("mongodb://localhost:27017")
@@ -14,6 +16,8 @@ func main() {
 ```
 
 ```go
+import "github.com/liontail/mongodb"
+
 type Document struct {
 	ID        bson.ObjectId `json:"id" bson:"_id"`
 	CreatedAt time.Time     `json:"created_at" bson:"created_at"`
