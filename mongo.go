@@ -12,7 +12,7 @@ type MgoSession struct {
 
 var session MgoSession
 
-func InitMongoDB(url string) error{
+func InitMongoDB(url string) error {
 	nSess, err := NewMgoSession(url)
 	if err != nil {
 		log.Fatalln("Can't Create Session: ", err)
