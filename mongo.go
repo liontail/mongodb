@@ -10,15 +10,16 @@ type MgoSession struct {
 	Session *mgo.Session
 }
 
-var session MgoSession
+var session *MgoSession
 
-func InitMongoDB(url string) error {
+// ex. mongodb://user:pass@localhost:27017/data
+func InitMongoDB(url string) (*MgoSession, error) {
 	nSess, err := NewMgoSession(url)
 	if err != nil {
 		log.Fatalln("Can't Create Session: ", err)
 	}
-	session = *nSess
-	return err
+	session = nSess
+	return session, err
 }
 
 func NewMgoSession(url string) (*MgoSession, error) {
