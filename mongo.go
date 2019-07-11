@@ -31,7 +31,7 @@ func NewMgoSession(url string) (*MgoSession, error) {
 }
 
 func GetMgoSession() *MgoSession {
-	return &session
+	return session
 }
 
 func (s *MgoSession) Copy() *MgoSession {
