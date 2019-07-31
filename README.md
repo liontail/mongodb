@@ -24,8 +24,6 @@ type Document struct {
 	Data      string        `json:"data" bson:"data"`
 }
 
-}
-
 func ExecuteSomeStuffInMongoDB() {
    doc := Document{
 		CreatedAt: time.Now(),
@@ -38,7 +36,7 @@ func ExecuteSomeStuffInMongoDB() {
 
     id := "34yhgvfrtyui213" // id is the hex of the objectId
     findDoc := Document{}
-    if err := db.Find(bson.M{"_id": bson.ObjectIdHex(id)}).One(&findDoc); err != nil {
+    if err := col.Find(bson.M{"_id": bson.ObjectIdHex(id)}).One(&findDoc); err != nil {
         //Handle error if you want
     }
 }
