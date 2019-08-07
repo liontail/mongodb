@@ -1,8 +1,6 @@
 package mongodb
 
 import (
-	"log"
-
 	"github.com/globalsign/mgo"
 )
 
@@ -16,7 +14,7 @@ var session *MgoSession
 func InitMongoDB(url string) (*MgoSession, error) {
 	nSess, err := NewMgoSession(url)
 	if err != nil {
-		log.Fatalln("Can't Create Session: ", err)
+		return nil, err
 	}
 	session = nSess
 	return session, err
