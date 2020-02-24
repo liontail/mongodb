@@ -1,7 +1,7 @@
 package mongodb
 
 import (
-	"github.com/globalsign/mgo"
+	"gopkg.in/mgo.v2"
 )
 
 type MgoSession struct {
