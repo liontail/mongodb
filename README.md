@@ -9,8 +9,13 @@ import "github.com/liontail/mongodb"
 
 func main() {
     ...
-    err := mongodb.InitMongoDB("mongodb://localhost:27017")
+    sess, err := mongodb.InitMongoDB("mongodb://localhost:27017")
     //It will initail the singleton of mongo session it will return error if you want to handle it
+    defer sess.close()
+    // after end process main will close the session
+
+    sess.Options.ReconnectTime = 10 // default 15
+    // there are keep alive session, overwrite this option to change the time or remove this to use default
     ...
 }
 ```
